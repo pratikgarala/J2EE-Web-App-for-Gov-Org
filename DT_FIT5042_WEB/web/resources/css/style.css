@@ -1,0 +1,184 @@
+body {
+    font-family:'Comic Sans MS';
+}
+
+div {
+
+    background-color:cadetblue;
+    border-radius:5px;
+    margin: 1.5% 1.5% 1.5% 1.5%;
+    padding: 0.5% 0.5% 0.5% 0.5%;
+}
+
+h1 {
+    text-align:center;
+    font-family:fantasy;
+    color: white;
+    font-size:50px;
+}
+
+b {
+    font-family:'Comic Sans MS';
+    color:wheat;
+}
+
+table {
+    width: 100%;
+}
+
+td{
+    text-align: center;
+}
+
+.tbStyle{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family:'Comic Sans MS';
+}
+
+.btnStyle {
+    width: 100%;
+    background-color: darkgoldenrod;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family:'Comic Sans MS';
+}
+
+.lblStyle {
+    font-family:'Comic Sans MS';
+    color:white;
+}
+
+.lblStyle1 {
+    text-align:right;
+    font-family:'Comic Sans MS';
+    color:white;
+}
+
+.panelStyle {
+    padding:20px;
+}
+
+.calStyle{
+    background-color: wheat;
+    font-family:'Comic Sans MS';
+}
+
+.cbStyle {
+    font-family:'Comic Sans MS';
+    text-align:center;
+}
+
+.rbStyle {
+    font-family:'Comic Sans MS';
+    text-align:center;
+}
+
+
+.serviceTable{   
+   border-collapse:collapse;
+   border:1px solid #000000;
+   border-radius:5px;
+}
+
+.serviceTableHeader{
+   text-align:center;
+   color: white;
+   background:none repeat scroll 0 0 darkgoldenrod;
+   border-bottom:1px solid #000000;  
+   padding:2px;
+}
+
+.serviceTableOddRow{
+   text-align:center;
+   background:none repeat scroll 0 0 #FFFFFF;	
+}
+
+.serviceTableEvenRow{
+   text-align:center;
+   background:none repeat scroll 0 0 #D3D3D3;
+}
+
+.tdStyle{
+    padding: 2% 2% 2% 2%;
+}
+
+#divThumbnail{
+    background-color: white;
+    float: left;
+    width: 18%;
+    
+}
+
+#divInput{
+    background-color: white; 
+    margin-bottom: 0%; 
+    padding-bottom: 0%; 
+    width: 76%; 
+    float: right;
+}
+
+#divNav{
+    padding: 0% 0% 0% 0%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 5px;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #D3D3D3;
+}
+
+.active {
+    background-color: darkgoldenrod;
+    color: white;
+}
+
+.enablebtnStyle_S {
+    width: 100%;
+    background-color: #4cae4c;
+    display: block;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family:'Comic Sans MS';
+}
+
+.disabledbtnStyle_S {
+    width: 100%;
+    background-color: #d9534f;
+    display: block;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family:'Comic Sans MS';
+}

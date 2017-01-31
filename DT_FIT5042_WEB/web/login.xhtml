@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>#{loginController.pageTitle}</title> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <h:outputStylesheet name="bootstrap/css/bootstrap.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" />
+        <h:outputScript name="bootstrap/js/bootstrap.js" />
+        <h:outputStylesheet name="css/style.css" />
+    </h:head>
+    <h:body>
+        <h:form id="form">
+            <div>
+                <div id="divHeader" style="background-color: darkgoldenrod">
+                    <h1>Government Services</h1>
+                </div>
+                
+                <div id="divNav">
+                    <ul>
+                        <li>
+                            <h:link id="searchService" value="Services" outcome="index" class=" li"/>
+                        </li>
+                        <li>
+                            <h:link id="login" value="Login" outcome="login" class="active li"/>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div id="divLoginInput" style="background-color: white;" >
+                    <table>
+                        <tr>
+                            <td colspan="2">
+                                <h2>Login</h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Member ID
+                            </td>
+                            <td>
+                                <h:inputText id="memberID" value="#{loginController.memberId}" class="tbStyle">
+
+                                </h:inputText>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Password
+                            </td>
+                            <td>
+                                <h:inputSecret id="password" value="#{loginController.password}" class="tbStyle" >
+                                </h:inputSecret>
+                            </td>
+                        </tr>
+                    </table>             
+                </div>
+                
+                <div id="divButton" >
+                    <table>
+                        <tr>
+                            <td class="tdStyle">
+                                <h:commandButton value="Login" class="btnStyle" action="#{loginController.login}">   		 
+                                    <f:ajax execute="@form"  render="message"/>
+<!--                                    <f:ajax execute="dtServices" render="dtServices" />
+                                    <f:ajax render="serviceNo serviceName serviceType thumbnail description imgThumbnail"/>-->
+                                </h:commandButton>
+                            </td>
+                        </tr>
+                    </table>
+                    <center>
+                        <h4> <h:outputText id="message" value="#{loginController.msg}" /> </h4>
+                    </center>
+                </div>
+            </div>
+        </h:form>
+    </h:body>
+</html>
+

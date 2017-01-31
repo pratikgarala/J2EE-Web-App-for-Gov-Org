@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  
+    xmlns:h="http://java.sun.com/jsf/html"  
+    xmlns:f="http://java.sun.com/jsf/core"> 
+    <h:head>
+        <title>#{indexController.pageTitle}</title> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <h:outputStylesheet name="bootstrap/css/bootstrap.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" />
+        <h:outputScript name="bootstrap/js/bootstrap.js" />
+        <h:outputStylesheet name="css/style.css" />
+        <script type="text/javascript">
+            function onClickServiceNo{
+               alert("Service No link clicked..!!");
+            } 
+        </script>
+    </h:head>
+    <h:body>
+        
+        <h:form id="form">
+        <div>
+            
+            <div id="divHeader" style="background-color: darkgoldenrod">
+                <h1>Government Services</h1>
+            </div>
+            
+            <div id="divNav">
+                <ul>
+                    <li>
+                        <h:link id="searchService" value="Services" outcome="index" class="active li"/>
+                    </li>
+                    <li>
+                        <h:link id="login" value="Login" outcome="login" class="li hlinks"/>
+                    </li>
+                </ul>
+            </div>
+            
+            <div id="divSearch" style="background-color: white; margin-bottom: 0%" >
+                <table>
+                    <tr>
+                        <td colspan="2">
+                            <h2>Search Services</h2>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Service No
+                        </td>
+                        <td>
+                            <h:inputText id="serviceNo" value="#{indexController.serviceNo}" class="tbStyle">
+
+                            </h:inputText>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Service Name
+                        </td>
+                        <td>
+                            <h:inputText id="serviceName" value="#{indexController.serviceName}" class="tbStyle">
+                            </h:inputText>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Service Type
+                        </td>
+                        <td>
+                            <h:inputText id="serviceType" value="#{indexController.serviceType}" class="tbStyle">
+                            </h:inputText>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+            
+            <div id="divButton" style="margin: 0% 0% 0% 0%; padding: 0% 0% 0% 0%">
+                <table>
+                    <tr>
+                        <td class="tdStyle">
+                            <h:commandButton value="Search" class="btnStyle" action="#{indexController.searchService()}">   		 
+                                <f:ajax execute="@form"  />
+                                <f:ajax execute="dtServices" render="dtServices" />
+                                <f:ajax render="serviceNo serviceName serviceType thumbnail description"/>
+                            </h:commandButton>
+                        </td>
+                        <td class="tdStyle">
+                            <h:commandButton value="View" class="btnStyle" action="#{indexController.viewService()}">   		 
+                                <f:ajax execute="@form"  />
+                                <f:ajax execute="dtServices" render="dtServices" />
+                                <f:ajax render="serviceNo serviceName serviceType thumbnail description imgThumbnail"/>
+                            </h:commandButton>
+                        </td>
+                    </tr>
+                </table>
+            </div> 
+            
+            <div id="divTable" style="background-color: white; margin-top: 0%;">
+                <h:dataTable id="dtServices" value="#{govtApplication.services}" var="service" 
+            styleClass="table"
+            headerClass="serviceTableHeader"
+            rowClasses="serviceTableOddRow,serviceTableEvenRow">
+                <h:column>
+                   <f:facet name="header">Service No</f:facet>
+                   <h:link id="serviceNoLink" value="#{service.serviceNo}" outcome="serviceDetails">
+                       <f:param name="serviceNo" value="#{service.serviceNo}" />
+                   </h:link>
+                   
+                </h:column>
+                <h:column>
+                   <f:facet name="header">Service Name</f:facet>
+                   #{service.serviceName}
+                </h:column>
+                <h:column>
+                   <f:facet name="header">Service Type</f:facet>
+                   #{service.serviceType}
+                </h:column>
+             </h:dataTable>
+            </div>
+            
+        </div>
+        </h:form>
+    </h:body>
+</html>

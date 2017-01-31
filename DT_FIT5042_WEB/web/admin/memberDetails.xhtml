@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  
+    xmlns:h="http://java.sun.com/jsf/html"  
+    xmlns:f="http://java.sun.com/jsf/core"> 
+    <h:head>
+        <title>#{membersController.pageTitle}</title> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <h:outputStylesheet name="bootstrap/css/bootstrap.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" />
+        <h:outputScript name="bootstrap/js/bootstrap.js" />
+        <h:outputStylesheet name="css/style.css" />
+    </h:head>
+    <h:body>
+        
+        <h:form id="form">
+        <div>
+            <div id="divHeader" style="background-color: darkgoldenrod">
+                <h1>Government Services</h1>
+            </div>
+            
+            <div id="divNav">
+                <ul>
+                    <li>
+                        <h:link id="searchService" value="Services" outcome="index" class="li"/>
+                    </li>
+                    <li>
+                        <h:link id="addService" value="Add Service"  outcome="addService" class="li"/>
+                    </li>
+                    <li>
+                        <h:link id="searchMember" value="Members" outcome= "members" class="active li"/>
+                    </li>
+                    <li>
+                        <h:link id="addMember" value="Add Member" outcome= "addMember" class="li"/>
+                    </li>
+                    <li>
+                        <h:link id="myServiceUse" value="My Service Uses" outcome= "showServiceUses" class="li"/>
+                    </li>
+                    <li>
+                        <h:link id="myProfile" value="My Profile" outcome= "myInfo" class="li"/>
+                    </li>
+                    <li>
+                        <h:link id="logout" value="Logout" outcome="#{loginController.logout()}" class="li"/>
+                    </li>
+                </ul>
+            </div>
+                    
+            <div style="background-color: white;" >
+                <table>
+                    <tr>
+                        <td colspan="2">
+                            <h2>Member Details</h2>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Member ID
+                        </td>
+                        <td>
+                            <h:inputText id="itMemberID" value="#{memberDetailController.memberId}" class="tbStyle" disabled="true">
+
+                            </h:inputText>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            First Name
+                        </td>
+                        <td>
+                            <h:inputText id="itFName" value="#{memberDetailController.firstName}" class="tbStyle">
+                            </h:inputText>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Last Name
+                        </td>
+                        <td>
+                            <h:inputText id="itLName" value="#{memberDetailController.lastName}" class="tbStyle">
+                            </h:inputText>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Member Type
+                        </td>
+                        <td>
+                            <h:selectOneMenu id="memType" value="#{memberDetailController.type}" class="tbStyle">
+                                <f:selectItem itemValue="G" itemLabel="Government Workers" />
+                                <f:selectItem itemValue="P" itemLabel="Members of Public" />
+                            </h:selectOneMenu>                    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Email
+                        </td>
+                        <td>
+                            <h:inputText id="itEmail" value="#{memberDetailController.email}" class="tbStyle">
+                            </h:inputText>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Phone Number
+                        </td>
+                        <td>
+                            <h:inputText id="itPhNo" value="#{memberDetailController.phoneNumber}" class="tbStyle">
+                            </h:inputText>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Street Number
+                        </td>
+                        <td>
+                            <h:inputText id="itStNo" value="#{memberDetailController.streetNumber}" class="tbStyle">
+                            </h:inputText>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Street Address
+                        </td>
+                        <td>
+                            <h:inputText id="itStAddress" value="#{memberDetailController.streetAddress}" class="tbStyle">
+                            </h:inputText>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Suburb
+                        </td>
+                        <td>
+                            <h:inputText id="itSuburb" value="#{memberDetailController.suburb}" class="tbStyle">
+                            </h:inputText>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Postcode
+                        </td>
+                        <td>
+                            <h:inputText id="itPostCode" value="#{memberDetailController.postcode}" class="tbStyle">
+                            </h:inputText>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            State
+                        </td>
+                        <td>
+                            <h:selectOneMenu id="state" value="#{memberDetailController.state}" class="tbStyle">
+                                <f:selectItem itemValue="ACT" itemLabel="Australian Capital Territory" />                            
+                                <f:selectItem itemValue="NSW" itemLabel="New South Wales" /> 
+                                <f:selectItem itemValue="NT" itemLabel="Northern Territory" />
+                                <f:selectItem itemValue="QLD" itemLabel="Queensland" />
+                                <f:selectItem itemValue="SA" itemLabel="South Australia" />
+                                <f:selectItem itemValue="VIC" itemLabel="Victoria" />
+                                <f:selectItem itemValue="WA" itemLabel="Western Australia" />
+                            </h:selectOneMenu>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div id="divButton" style="margin: 0% 0% 0% 0%; padding: 0% 0% 0% 0%">
+                <table>                    
+                    <tr>
+                        <td class="tdStyle">
+                            <h:commandButton value="Update" class="btnStyle" action="#{memberDetailController.updateMember()}">   		 
+                                <f:ajax execute="@form"  />
+                                <!--<f:ajax render="serviceNo serviceName serviceType thumbnail description"/>-->
+                            </h:commandButton>
+                        </td>
+                        <td class="tdStyle">
+                            <h:commandButton value="Delete" class="btnStyle" action="#{memberDetailController.deleteMember()}">   		 
+                                <f:ajax execute="@form"  />
+                                <!--<f:ajax render="serviceNo serviceName serviceType thumbnail description"/>-->
+                            </h:commandButton>
+                        </td>
+                    </tr>
+                </table>
+            </div> 
+         
+        </div>
+        </h:form>
+    </h:body>
+</html>
